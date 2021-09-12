@@ -17,10 +17,15 @@ import {useState} from 'react';
           day: 'Sep 4th, 2021',
           reminder: false
       }])
+
+    const deleteTask = (taskId) => {
+      console.log('Delete Task Action Called', taskId)
+    };
+
   return (
     <div className="container">
       <Header />
-      <Tasks tasks={tasks}/>
+      <Tasks tasks={tasks} onDelete={deleteTask}/>
     </div>
   );
 }
