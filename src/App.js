@@ -1,5 +1,6 @@
 import Header from "./components/Header";
 import Tasks from './components/Tasks'
+import AddTask from './components/AddTask'
 import {useState} from 'react';
 
 
@@ -46,6 +47,7 @@ import {useState} from 'react';
     }
   return (
     <div className="container">
+      <AddTask />
       <Header />
       { tasks.length > 0 ? <Tasks tasks={tasks} onToggle={reminderToggle} onDelete={deleteTask}/> : 'No tasks' }
     </div>
