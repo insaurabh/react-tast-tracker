@@ -45,9 +45,21 @@ import {useState} from 'react';
         ...task, reminder: !task.reminder
       }: task))
     }
+
+    // add task when form submitted
+     const addTask = (value) => {
+       console.log('Task added', value);
+       const id = 5;
+        const newTask = {
+          id, ...tasks
+        }
+
+        console.log(tasks)
+        setTasks([...tasks, newTask])
+     }
   return (
     <div className="container">
-      <AddTask />
+      <AddTask onAdd={addTask}/>
       <Header />
       { tasks.length > 0 ? <Tasks tasks={tasks} onToggle={reminderToggle} onDelete={deleteTask}/> : 'No tasks' }
     </div>
